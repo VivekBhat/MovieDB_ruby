@@ -12,9 +12,13 @@ case choice
   when "add"
     puts "Enter Movie: "
     title =  gets.chomp.to_sym
-    puts "Enter Rating: "
-    rating = gets.chomp.to_i
-    movies[title] = rating
+    if movies[title.to_sym].nil?
+      puts "Enter Rating: "
+      rating = gets.chomp.to_i
+      movies[title] = rating
+    else
+      puts "Movie already there bro :/"
+    end
 
   when "update"
     puts "Updated!"
